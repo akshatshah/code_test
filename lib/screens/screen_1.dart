@@ -59,6 +59,7 @@ class GridWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
+      physics: NeverScrollableScrollPhysics(),
       crossAxisCount: 4,
       shrinkWrap: true,
       children: items.map((value) {
