@@ -16,7 +16,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
 
   TextEditingController controller = TextEditingController();
 
-  String _search;
+  String _search = '';
 
   @override
   void dispose() {
@@ -25,7 +25,6 @@ class _ScreenTwoState extends State<ScreenTwo> {
   }
 
   setSearch() {
-    print(_search);
     var result = json
         .where(
             (e) => e["product_name"].toString().toLowerCase().contains(_search))
