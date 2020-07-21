@@ -2,8 +2,8 @@
 
 A new Flutter project.
 
-Master: Updated Branch with the final solutions
-Feature: Whatever I was able to finish in the 35 mins
+- Master: Updated Branch with the final solutions
+- Feature: Whatever I was able to finish in the 35 mins
 
 ## Getting Started
 
