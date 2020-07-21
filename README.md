@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+Master: Updated Branch with the final solutions
+Feature: Whatever I was able to finish in the 35 mins
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
