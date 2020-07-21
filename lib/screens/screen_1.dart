@@ -39,20 +39,37 @@ class ScreenOne extends StatelessWidget {
                       color: Colors.blue,
                       child: Text(json[index]["header"]),
                     ),
-                    // GridView.builder(
-                    //     shrinkWrap: true,
-                    //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    //         crossAxisCount: 3),
-                    //     itemBuilder: (context, ind) {
-                    //       List<String> values =
-                    //           json[index]["items"] as List<String>;
-                    //       return Card(
-                    //         child: Text(values[ind]),
-                    //       );
-                    //     })
+                    GridWidget(
+                      items: json[index]["items"] as List<String>,
+                    )
                   ],
                 )),
       ),
+    );
+  }
+}
+
+class GridWidget extends StatelessWidget {
+  GridWidget({
+    Key key,
+    this.items,
+  }) : super(key: key);
+
+  final List<String> items;
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 4,
+      shrinkWrap: true,
+      children: items.map((value) {
+        return Card(
+          child: Container(
+            color: Colors.white,
+            alignment: Alignment.center,
+            child: Text(value),
+          ),
+        );
+      }).toList(),
     );
   }
 }

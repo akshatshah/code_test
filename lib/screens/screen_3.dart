@@ -19,22 +19,36 @@ class ScreenThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          DropdownButton(items: [
-            ...json.map((e) => DropdownMenuItem(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(e["emp_name"]),
-                      Text(e["age"].toString()),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Select Item'),
+                SizedBox(
+                  width: 20,
+                ),
+                DropdownButton(
+                    hint: Text('Select Item'),
+                    items: [
+                      ...json.map((e) => DropdownMenuItem(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(e["emp_name"]),
+                                Text(e["age"].toString()),
+                              ],
+                            ),
+                          ))
                     ],
-                  ),
-                ))
-          ], onChanged: (value) {})
-        ],
+                    onChanged: (value) {}),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
